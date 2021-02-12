@@ -6,7 +6,7 @@
 #    By: jgingast <jgingast@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/28 16:45:41 by jgingast          #+#    #+#              #
-#    Updated: 2020/12/28 17:02:19 by jgingast         ###   ########.fr        #
+#    Updated: 2021/02/12 10:43:11 by jgingast         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,10 @@ $(NAME):
 	clang -c $(CFLAGS) $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
+
+so:
+	clang -c -fPIC $(CFLAGS) $(SRC)
+	gcc -shared -o libft.so $(OBJ)
 
 clean:
 	rm -rf $(OBJ)
